@@ -2,14 +2,6 @@
 
 This repository will hold the artifacts for the final project submission for CS 1530: Software Engineering
 
-Name: Samantha Aziz
-Role: Developer
+## Group Members:
 
-Name: Brandon Yasin
-Role: Developer
-
-Name: Jason Mertz
-Role: Developer
-
-Name: Brittany Dao
-Role: Developer
+Samantha Aziz (Developer), Brandon Yasin (Developer), Jason Mertz (Developer), Brittany Dao (Developer)
