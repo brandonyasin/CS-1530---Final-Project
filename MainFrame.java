@@ -13,15 +13,12 @@ public class MainFrame extends JFrame {
 
     public void initialize() {
 
+        /**************************** Welcome Pannel *********************/
         JPanel formPanel = new JPanel();
-        formPanel.setLayout(new GridBagLayout());
+        formPanel.setLayout(new FlowLayout());
         textLabel = new JLabel("Welcome to CodeCraft Academy! To get started, please select a role.", JLabel.CENTER);
         textLabel.setFont(mainFont);
         formPanel.add(textLabel);
-
-        /************************** Welcome Label ************************/
-        lbWelcome = new JLabel();
-        lbWelcome.setFont(mainFont);
 
         /***************************** Buttons Pannel *******************/
         JButton studentButton = new JButton("Student");
@@ -54,15 +51,14 @@ public class MainFrame extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBackground(new Color(13, 70, 135));
-        mainPanel.add(formPanel, BorderLayout.CENTER);
-        mainPanel.add(lbWelcome, BorderLayout.NORTH);
-        mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
+        mainPanel.add(formPanel, BorderLayout.NORTH);
+        mainPanel.add(buttonsPanel, BorderLayout.CENTER);
 
         add(mainPanel);
 
         setTitle("Welcome to CodeCraft Academy!");
-        setSize(450, 450);
-        setMinimumSize(new DimensionUIResource(300, 400));
+        setSize(700, 200);
+        setMinimumSize(new DimensionUIResource(100, 100));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
