@@ -27,3 +27,12 @@ Brittany Dao: **Developer**
   - Sprint 1: Friday, December 1st to Sunday, December 3rd
     - Standup #1: Sunday, December 3rd @ 11 AM via Slack huddle
   - Sprint 2: Monday, December 4th to Wednesday, December 6th
+
+### Sprint 1 - Friday, December 1st - Sunday, December 3rd
+
+- Broke down FR1 and FR2 into two smaller ticket items.
+- Assigned each ticket item to respective developer(s).
+- Wrote logic for Student and Educator classes.
+- Wrote logic for creating coding challenge.
+- Wrote simple program for simple Java GUI that will be refactored to include code creation and student/educator logic.
+- Demonstrated code progress and voiced concerns during standup.

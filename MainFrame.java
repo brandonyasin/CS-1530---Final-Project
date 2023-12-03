@@ -8,7 +8,6 @@ import javax.swing.plaf.DimensionUIResource;
 
 public class MainFrame extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
-    JLabel lbWelcome;
     JLabel textLabel;
 
     public void initialize() {
@@ -28,6 +27,7 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("You've selected the student role!");
+                /******************* Student Logic **********************/
             }
 
         });
@@ -39,6 +39,7 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("You've selected the educator role!");
+                /******************* Educator Logic **********************/
             }
 
         });
