@@ -12,6 +12,8 @@ public class MainFrame extends JFrame {
     JLabel helloLabel; // label for printing hello + name
     JTextField tfName; // text field for name
     JLabel lbChallenge; // label for coding challenge
+    Educator educator; //educator object to call the educator methods on 
+    Student student; //student object to call the student methods on
 
     public void initialize() {
 
@@ -60,14 +62,20 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /******************* Educator Logic **********************/
+               
                 String name = tfName.getText();
+                educator = new Educator(name);
                 helloLabel.setText("Hello " + name + ", you've selected the educator role!");
-                String ans = JOptionPane.showInputDialog("Would you like to create a coding challenge? ");
-                if (ans.equals("Yes")) {
-                    String challenge = JOptionPane.showInputDialog("Please write a coding challenge: ");
+                int ans = JOptionPane.showConfirmDialog(null,"Do you want to add a Coding Challenge?", "Create Challenge",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+                if (ans == JOptionPane.YES_OPTION) { //might want to change this to yes or no buttons to click on
+                    String text = JOptionPane.showInputDialog("Please write a coding challenge: ");
                     // we can use challenge to initialize a CodingChallenge object
                     // import CodingChallenge.java as an inner class to MainFrame.java
-                    lbChallenge.setText("Coding challenge: " + challenge);
+                    CodingChallenge challenge = new CodingChallenge(text);
+                    educator.addChallenge(challenge);
+                    lbChallenge.setText("Coding challenge: " + text);
                 }
 
             }
