@@ -11,6 +11,7 @@ public class MainFrame extends JFrame {
     JLabel textLabel;
     JLabel helloLabel; // label for printing hello + name
     JTextField tfName; // text field for name
+    JLabel lbChallenge; // label for coding challenge
 
     public void initialize() {
 
@@ -22,7 +23,7 @@ public class MainFrame extends JFrame {
                 JLabel.CENTER);
         textLabel.setFont(mainFont);
 
-        /****************** Hello Pannel: Allows User to enter name *******************/
+        /****************** Hello Label: Allows User to enter name *******************/
         JLabel lbName = new JLabel("First Name");
         lbName.setFont(mainFont);
         tfName = new JTextField();
@@ -34,6 +35,10 @@ public class MainFrame extends JFrame {
 
         helloLabel = new JLabel();
         helloLabel.setFont(mainFont);
+
+        /************************* Coding Challenge Label *****************/
+        lbChallenge = new JLabel();
+        lbChallenge.setFont(mainFont);
 
         /***************************** Buttons Pannel *******************/
         JButton studentButton = new JButton("Student");
@@ -57,6 +62,13 @@ public class MainFrame extends JFrame {
                 /******************* Educator Logic **********************/
                 String name = tfName.getText();
                 helloLabel.setText("Hello " + name + ", you've selected the educator role!");
+                String ans = JOptionPane.showInputDialog("Would you like to create a coding challenge? ");
+                if (ans.equals("Yes")) {
+                    String challenge = JOptionPane.showInputDialog("Please write a coding challenge: ");
+                    // we can use challenge to initialize a CodingChallenge object
+                    // import CodingChallenge.java as an inner class to MainFrame.java
+                    lbChallenge.setText("Coding challenge: " + challenge);
+                }
 
             }
 
@@ -72,6 +84,7 @@ public class MainFrame extends JFrame {
         mainPanel.setBackground(formPanel.getBackground());
         mainPanel.add(formPanel, BorderLayout.NORTH);
         mainPanel.add(helloLabel, BorderLayout.CENTER);
+        mainPanel.add(lbChallenge);
         mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
         add(mainPanel);

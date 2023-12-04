@@ -36,3 +36,10 @@ Brittany Dao: **Developer**
 - Wrote logic for creating coding challenge.
 - Wrote simple program for simple Java GUI that will be refactored to include code creation and student/educator logic.
 - Demonstrated code progress and voiced concerns during standup.
+
+## How to Run Program
+
+- Download src files and open in your favorite IDE (Ex: NetBeans, IntelliJ, VSCode)
+- To compile via command line, use the command
+  `java MainFrame.java`
+- If using VSCode, use the Run Java feature in the upper right corner
