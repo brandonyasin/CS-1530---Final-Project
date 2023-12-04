@@ -9,15 +9,31 @@ import javax.swing.plaf.DimensionUIResource;
 public class MainFrame extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JLabel textLabel;
+    JLabel helloLabel; // label for printing hello + name
+    JTextField tfName; // text field for name
 
     public void initialize() {
 
         /**************************** Welcome Pannel *********************/
         JPanel formPanel = new JPanel();
-        formPanel.setLayout(new FlowLayout());
-        textLabel = new JLabel("Welcome to CodeCraft Academy! To get started, please select a role.", JLabel.CENTER);
+        formPanel.setLayout(new GridLayout(4, 1, 5, 5));
+        textLabel = new JLabel(
+                "Welcome to CodeCraft Academy! To get started, please enter your name and select a role.",
+                JLabel.CENTER);
         textLabel.setFont(mainFont);
+
+        /****************** Hello Pannel: Allows User to enter name *******************/
+        JLabel lbName = new JLabel("First Name");
+        lbName.setFont(mainFont);
+        tfName = new JTextField();
+        tfName.setFont(mainFont);
+
         formPanel.add(textLabel);
+        formPanel.add(lbName);
+        formPanel.add(tfName);
+
+        helloLabel = new JLabel();
+        helloLabel.setFont(mainFont);
 
         /***************************** Buttons Pannel *******************/
         JButton studentButton = new JButton("Student");
@@ -38,8 +54,10 @@ public class MainFrame extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("You've selected the educator role!");
                 /******************* Educator Logic **********************/
+                String name = tfName.getText();
+                helloLabel.setText("Hello " + name + ", you've selected the educator role!");
+
             }
 
         });
@@ -51,14 +69,15 @@ public class MainFrame extends JFrame {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBackground(new Color(13, 70, 135));
+        mainPanel.setBackground(formPanel.getBackground());
         mainPanel.add(formPanel, BorderLayout.NORTH);
-        mainPanel.add(buttonsPanel, BorderLayout.CENTER);
+        mainPanel.add(helloLabel, BorderLayout.CENTER);
+        mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
 
         setTitle("Welcome to CodeCraft Academy!");
-        setSize(700, 200);
+        setSize(1000, 300);
         setMinimumSize(new DimensionUIResource(100, 100));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
