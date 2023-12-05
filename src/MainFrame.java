@@ -72,8 +72,14 @@ public class MainFrame extends JFrame {
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
                 if (ans == JOptionPane.YES_OPTION) {
-                    student.progress.add(new CodingChallenge("Temp Challenge 1"));
-                    lbChallenge.setText("Coding challenge: " + student.progress.get(0).codingChallenge);
+                    String challengeList = "<html>Coding challenges:<br/>";
+                    for(CodingChallenge challenge : challenges){
+                        System.out.println(challenge.codingChallenge);
+                        challengeList += challenge.codingChallenge;
+                        challengeList += "<br/>";
+                    }
+                    challengeList += "</html>";
+                    lbChallenge.setText(challengeList);
                 }
             }
 
@@ -103,7 +109,7 @@ public class MainFrame extends JFrame {
                     } catch (Exception ex) {
                         // ??
                     }
-                    educator.addChallenge(challenge);
+                    //educator.addChallenge(challenge);
                     challenges.add(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
                 }
@@ -121,8 +127,8 @@ public class MainFrame extends JFrame {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBackground(formPanel.getBackground());
         mainPanel.add(formPanel, BorderLayout.NORTH);
-        mainPanel.add(helloLabel, BorderLayout.CENTER);
-        mainPanel.add(lbChallenge);
+        mainPanel.add(helloLabel, BorderLayout.WEST);
+        mainPanel.add(lbChallenge, BorderLayout.EAST);
         mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
