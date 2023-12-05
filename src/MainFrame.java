@@ -66,8 +66,18 @@ public class MainFrame extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("You've selected the student role!");
+                //System.out.println("You've selected the student role!");
                 /******************* Student Logic **********************/
+                String name = tfName.getText();
+                student = new Student(name);
+                helloLabel.setText("Hello " + name + ", you've selected the student role!");
+                int ans = JOptionPane.showConfirmDialog(null,"Do you want to view your Coding Challenge?", "View Challenges",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+                if(ans == JOptionPane.YES_OPTION){
+                    student.progress.add(new CodingChallenge("Temp Challenge 1"));
+                    lbChallenge.setText("Coding challenge: " + student.progress.get(0).codingChallenge);
+                }
             }
 
         });
