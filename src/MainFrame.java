@@ -29,9 +29,7 @@ public class MainFrame extends JFrame {
 
         /**************************** Fetching Stored Challenges *********************/
         challenges = fetchCodingChallenges();
-        for (CodingChallenge challenge : challenges){
-            System.out.println(challenge.codingChallenge);
-        }
+        //everytime the program is launched, challenges are read in from the file.
 
 
         /**************************** Welcome Pannel *********************/
