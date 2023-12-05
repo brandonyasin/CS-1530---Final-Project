@@ -6,6 +6,15 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.ArrayList;  
+import java.util.Scanner;
+
+
 public class MainFrame extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JLabel textLabel;
@@ -14,8 +23,16 @@ public class MainFrame extends JFrame {
     JLabel lbChallenge; // label for coding challenge
     Educator educator; //educator object to call the educator methods on 
     Student student; //student object to call the student methods on
+    ArrayList<CodingChallenge> challenges;
 
     public void initialize() {
+
+        /**************************** Fetching Stored Challenges *********************/
+        challenges = fetchCodingChallenges();
+        for (CodingChallenge challenge : challenges){
+            System.out.println(challenge.codingChallenge);
+        }
+
 
         /**************************** Welcome Pannel *********************/
         JPanel formPanel = new JPanel();
@@ -64,7 +81,7 @@ public class MainFrame extends JFrame {
                 /******************* Educator Logic **********************/
                
                 String name = tfName.getText();
-                educator = new Educator(name);
+                educator = new Educator(name,challenges);
                 helloLabel.setText("Hello " + name + ", you've selected the educator role!");
                 int ans = JOptionPane.showConfirmDialog(null,"Do you want to add a Coding Challenge?", "Create Challenge",
                 JOptionPane.YES_NO_OPTION,
@@ -74,6 +91,11 @@ public class MainFrame extends JFrame {
                     // we can use challenge to initialize a CodingChallenge object
                     // import CodingChallenge.java as an inner class to MainFrame.java
                     CodingChallenge challenge = new CodingChallenge(text);
+                    try{
+                    writeCodingChallenge(text);}
+                    catch(Exception ex){
+                        //??
+                    }
                     educator.addChallenge(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
                 }
@@ -102,6 +124,34 @@ public class MainFrame extends JFrame {
         setMinimumSize(new DimensionUIResource(100, 100));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+    }
+
+    public static boolean writeCodingChallenge(String challenge) throws IOException{ 
+        FileWriter fw = new FileWriter("Challenges.txt",true); //append is true so that we dont overwrite coding challenges
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(challenge + "\n");
+        bw.close();
+        return true;
+    }
+
+    public static ArrayList<CodingChallenge> fetchCodingChallenges(){
+        ArrayList<CodingChallenge> challs = new ArrayList<CodingChallenge>();
+        try{
+            File myFile = new File("Challenges.txt");
+            Scanner fileScan = new Scanner(myFile);
+            while (fileScan.hasNextLine()){
+                String challenge = fileScan.nextLine();
+                CodingChallenge newChall = new CodingChallenge(challenge);
+                challs.add(newChall);
+
+            }
+            fileScan.close();
+        }
+        catch(FileNotFoundException e){
+            System.out.println(e);
+        }
+        return challs;
+
     }
 
     public static void main(String[] args) {

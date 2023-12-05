@@ -15,6 +15,11 @@ public class Educator{
         challenges = new ArrayList<CodingChallenge>();
     }
 
+    public Educator(String name, ArrayList<CodingChallenge> challenges){
+        this(name);
+        this.challenges = challenges;
+    }
+
     // Adds a Student to the Educator's roster
     public void addStudent(Student s){
         roster.add(s);
