@@ -11,9 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.ArrayList;  
+import java.util.ArrayList;
 import java.util.Scanner;
-
 
 public class MainFrame extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
@@ -21,16 +20,15 @@ public class MainFrame extends JFrame {
     JLabel helloLabel; // label for printing hello + name
     JTextField tfName; // text field for name
     JLabel lbChallenge; // label for coding challenge
-    Educator educator; //educator object to call the educator methods on 
-    Student student; //student object to call the student methods on
+    Educator educator; // educator object to call the educator methods on
+    Student student; // student object to call the student methods on
     ArrayList<CodingChallenge> challenges;
 
     public void initialize() {
 
         /**************************** Fetching Stored Challenges *********************/
         challenges = fetchCodingChallenges();
-        //everytime the program is launched, challenges are read in from the file.
-
+        // everytime the program is launched, challenges are read in from the file.
 
         /**************************** Welcome Pannel *********************/
         JPanel formPanel = new JPanel();
@@ -64,15 +62,16 @@ public class MainFrame extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                //System.out.println("You've selected the student role!");
+                // System.out.println("You've selected the student role!");
                 /******************* Student Logic **********************/
                 String name = tfName.getText();
                 student = new Student(name);
                 helloLabel.setText("Hello " + name + ", you've selected the student role!");
-                int ans = JOptionPane.showConfirmDialog(null,"Do you want to view your Coding Challenge?", "View Challenges",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE);
-                if(ans == JOptionPane.YES_OPTION){
+                int ans = JOptionPane.showConfirmDialog(null, "Do you want to view your Coding Challenge?",
+                        "View Challenges",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+                if (ans == JOptionPane.YES_OPTION) {
                     student.progress.add(new CodingChallenge("Temp Challenge 1"));
                     lbChallenge.setText("Coding challenge: " + student.progress.get(0).codingChallenge);
                 }
@@ -87,22 +86,22 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /******************* Educator Logic **********************/
-               
+
                 String name = tfName.getText();
-                educator = new Educator(name,challenges);
+                educator = new Educator(name, challenges);
                 helloLabel.setText("Hello " + name + ", you've selected the educator role!");
-                int ans = JOptionPane.showConfirmDialog(null,"Do you want to add a Coding Challenge?", "Create Challenge",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE);
-                if (ans == JOptionPane.YES_OPTION) { //might want to change this to yes or no buttons to click on
+                int ans = JOptionPane.showConfirmDialog(null, "Do you want to add a Coding Challenge?",
+                        "Create Challenge",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+                if (ans == JOptionPane.YES_OPTION) { // might want to change this to yes or no buttons to click on
                     String text = JOptionPane.showInputDialog("Please write a coding challenge: ");
                     // we can use challenge to initialize a CodingChallenge object
-                    // import CodingChallenge.java as an inner class to MainFrame.java
                     CodingChallenge challenge = new CodingChallenge(text);
-                    try{
-                    writeCodingChallenge(text);}
-                    catch(Exception ex){
-                        //??
+                    try {
+                        writeCodingChallenge(text);
+                    } catch (Exception ex) {
+                        // ??
                     }
                     educator.addChallenge(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
@@ -134,28 +133,28 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
-    public static boolean writeCodingChallenge(String challenge) throws IOException{ 
-        FileWriter fw = new FileWriter("Challenges.txt",true); //append is true so that we dont overwrite coding challenges
+    public static boolean writeCodingChallenge(String challenge) throws IOException {
+        FileWriter fw = new FileWriter("Challenges.txt", true); // append is true so that we dont overwrite coding
+                                                                // challenges
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(challenge + "\n");
         bw.close();
         return true;
     }
 
-    public static ArrayList<CodingChallenge> fetchCodingChallenges(){
+    public static ArrayList<CodingChallenge> fetchCodingChallenges() {
         ArrayList<CodingChallenge> challs = new ArrayList<CodingChallenge>();
-        try{
+        try {
             File myFile = new File("Challenges.txt");
             Scanner fileScan = new Scanner(myFile);
-            while (fileScan.hasNextLine()){
+            while (fileScan.hasNextLine()) {
                 String challenge = fileScan.nextLine();
                 CodingChallenge newChall = new CodingChallenge(challenge);
                 challs.add(newChall);
 
             }
             fileScan.close();
-        }
-        catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println(e);
         }
         return challs;
