@@ -105,6 +105,7 @@ public class MainFrame extends JFrame {
                         //??
                     }
                     educator.addChallenge(challenge);
+                    challenges.add(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
                 }
 
