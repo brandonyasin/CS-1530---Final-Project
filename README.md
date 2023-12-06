@@ -1,16 +1,26 @@
 # CS-1530: Final-Project
 
-This repository will hold the artifacts for the final project submission for CS 1530: Software Engineering
+This repository will hold the artifacts for the final project submission for CS 1530: Software Engineering.
+
+The goal of this project was to model Scru, software development and produce the foundation of a coding challenge game for people of all ages. Our team implemented a typical software development life cycle by breaking up into roles of Developers, a Product Owner, and Scrum Master with all members being a developer and some holding two titles. We began our software development process by discussing the problem statement and converting the first five functional requirements into backlog ticket items. Once we established a timeline and understand each other's availability, we conducted several meetings, standups, and sprint reviews to ensure we followed a typical Scrum process. We worked on ticket items, individually and together, had "code reviews" and demonstrated our progress to each other. By the end of the two sprints, we were able to convert the first two functional requirements into software architecture model and a working GUI!
 
 ## Roles and Responsibilities:
 
 Samantha Aziz: **Product Owner and Developer**
+
 <br>
 Brandon Yasin: **Scrum Master and Developer**
+
+- Conducted sprint meetings and ran standup to streamline development process
+- Contributed to the development of the MainFrame.java GUI code
+- Ensured all team members / developers understood ticket items and resolved confusion.
+
 <br>
 Jason Mertz: **Developer**
+
 <br>
 Brittany Dao: **Developer**
+
 <br>
 ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*U67AIEa0LRk90P5oS3ELIA.gif)
 
@@ -36,6 +46,15 @@ Brittany Dao: **Developer**
 - Wrote logic for creating coding challenge.
 - Wrote simple program for simple Java GUI that will be refactored to include code creation and student/educator logic.
 - Demonstrated code progress and voiced concerns during standup.
+- Conducted a sprint review to discuss our development process and how it can be improved
+
+### Sprint 2 - Monday, December 4th - Wednesday, December 6th
+
+- Worked out logical and GUI errors in our code.
+- Presented our code during group meeting to explain its functionality and initiate code review
+- Added new tickets to Kanban board and moved former tickets into done.
+- Worked on UML deployment diagram for our system.
+- Successfully completed FR1 and FR2
 
 ## How to Run Program
 
