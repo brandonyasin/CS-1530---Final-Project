@@ -23,6 +23,8 @@ Jason Mertz: **Developer**
 - Cleaned up some minor issues with the GUI label layout
 
 Brittany Dao: **Developer**
+- Found bugs in the program
+- Contributed to UserGUI.java
 
 ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*U67AIEa0LRk90P5oS3ELIA.gif)
 
@@ -39,6 +41,7 @@ Brittany Dao: **Developer**
   - Sprint 1: Friday, December 1st to Sunday, December 3rd
     - Standup #1: Sunday, December 3rd @ 11 AM via Slack huddle
   - Sprint 2: Monday, December 4th to Wednesday, December 6th
+    - Standup #1: Sunday, December 6th @ 5 AM in person
 
 ### Sprint 1 - Friday, December 1st - Sunday, December 3rd
 
