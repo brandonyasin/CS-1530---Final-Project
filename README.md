@@ -2,26 +2,22 @@
 
 This repository will hold the artifacts for the final project submission for CS 1530: Software Engineering.
 
-The goal of this project was to model Scru, software development and produce the foundation of a coding challenge game for people of all ages. Our team implemented a typical software development life cycle by breaking up into roles of Developers, a Product Owner, and Scrum Master with all members being a developer and some holding two titles. We began our software development process by discussing the problem statement and converting the first five functional requirements into backlog ticket items. Once we established a timeline and understand each other's availability, we conducted several meetings, standups, and sprint reviews to ensure we followed a typical Scrum process. We worked on ticket items, individually and together, had "code reviews" and demonstrated our progress to each other. By the end of the two sprints, we were able to convert the first two functional requirements into software architecture model and a working GUI!
+The goal of this project was to model Scrum software development and produce the foundation of a coding challenge game for people of all ages. Our team implemented a typical software development life cycle by breaking up into roles of Developers, a Product Owner, and Scrum Master with all members being a developer and some holding two titles. We began our software development process by discussing the problem statement and converting the first five functional requirements into backlog ticket items. Once we established a timeline and understand each other's availability, we conducted several meetings, standups, and sprint reviews to ensure we followed a typical Scrum process. We worked on ticket items, individually and together, had "code reviews" and demonstrated our progress to each other. By the end of the two sprints, we were able to convert the first two functional requirements into a deployment model and a working GUI!
 
 ## Roles and Responsibilities:
 
 Samantha Aziz: **Product Owner and Developer**
 
-<br>
-Brandon Yasin: **Scrum Master and Developer**
+Brandon Yasin: **Product Owner and Developer**
 
 - Conducted sprint meetings and ran standup to streamline development process
 - Contributed to the development of the MainFrame.java GUI code
 - Ensured all team members / developers understood ticket items and resolved confusion.
 
-<br>
 Jason Mertz: **Developer**
 
-<br>
 Brittany Dao: **Developer**
 
-<br>
 ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*U67AIEa0LRk90P5oS3ELIA.gif)
 
 ## Timeline
