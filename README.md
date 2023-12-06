@@ -7,11 +7,14 @@ The goal of this project was to model Scrum software development and produce the
 ## Roles and Responsibilities:
 
 Samantha Aziz: **Product Owner and Developer**
+- Made CodingChallenge.java, and CodingChallengeTest.java
+- Added writing and reading from Challenges.txt file
+- Collabed with Brandon on the Deployment Diagram
 
-Brandon Yasin: **Product Owner and Developer**
+Brandon Yasin: **Scrum Master and Developer**
 
 - Conducted sprint meetings and ran standup to streamline development process
-- Contributed to the development of the MainFrame.java GUI code
+- Contributed to the development of the UserGUI.java GUI code
 - Ensured all team members / developers understood ticket items and resolved confusion.
 
 Jason Mertz: **Developer**
