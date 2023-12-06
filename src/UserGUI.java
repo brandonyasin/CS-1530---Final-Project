@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MainFrame extends JFrame {
+public class UserGUI extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JLabel textLabel;
     JLabel helloLabel; // label for printing hello + name
@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
                         JOptionPane.QUESTION_MESSAGE);
                 if (ans == JOptionPane.YES_OPTION) {
                     String challengeList = "<html>Coding challenges:<br/>";
-                    for(CodingChallenge challenge : challenges){
+                    for (CodingChallenge challenge : challenges) {
                         System.out.println(challenge.codingChallenge);
                         challengeList += challenge.codingChallenge;
                         challengeList += "<br/>";
@@ -109,7 +109,7 @@ public class MainFrame extends JFrame {
                     } catch (Exception ex) {
                         // ??
                     }
-                    //educator.addChallenge(challenge);
+                    // educator.addChallenge(challenge);
                     challenges.add(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
                 }
@@ -169,7 +169,7 @@ public class MainFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        MainFrame myFrame = new MainFrame();
+        UserGUI myFrame = new UserGUI();
         myFrame.initialize();
     }
 }
