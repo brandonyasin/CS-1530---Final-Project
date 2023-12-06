@@ -18,6 +18,9 @@ Brandon Yasin: **Scrum Master and Developer**
 - Ensured all team members / developers understood ticket items and resolved confusion.
 
 Jason Mertz: **Developer**
+- Made Student.java and Educator.java
+- Added functionality that allowed Student users to view their assigned Challenges
+- Cleaned up some minor issues with the GUI label layout
 
 Brittany Dao: **Developer**
 
