@@ -62,5 +62,5 @@ Brittany Dao: **Developer**
 
 - Download src files and open in your favorite IDE (Ex: NetBeans, IntelliJ, VSCode)
 - To compile via command line, use the command
-  `java MainFrame.java`
+  `java UserGUI.java`
 - If using VSCode, use the Run Java feature in the upper right corner
