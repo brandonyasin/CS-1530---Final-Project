@@ -72,6 +72,7 @@ public class UserGUI extends JFrame {
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
                 if (ans == JOptionPane.YES_OPTION) {
+                    // goes through all of the Student's assigned challenges and displays them in a list format
                     String challengeList = "<html>Coding challenges:<br/>";
                     for (CodingChallenge challenge : challenges) {
                         System.out.println(challenge.codingChallenge);
@@ -110,6 +111,7 @@ public class UserGUI extends JFrame {
                         // ??
                     }
                     // educator.addChallenge(challenge);
+                    // adds a challenge to the Educator's list of CodingChallenges and then displays the newly added challenge
                     challenges.add(challenge);
                     lbChallenge.setText("Coding challenge: " + text);
                 }
@@ -149,6 +151,7 @@ public class UserGUI extends JFrame {
         return true;
     }
 
+    // reads the contents of the Challenges database (Challenges.txt) and adds them to the instance of the program
     public static ArrayList<CodingChallenge> fetchCodingChallenges() {
         ArrayList<CodingChallenge> challs = new ArrayList<CodingChallenge>();
         try {
